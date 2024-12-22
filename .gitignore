@@ -2,7 +2,8 @@
 node_modules
 /dist
 *.db
-
+/web
+web/
 
 # Log files
 npm-debug.log*
