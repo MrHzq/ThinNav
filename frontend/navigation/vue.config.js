@@ -6,7 +6,7 @@ module.exports = defineConfig({
 module.exports = {
   publicPath: "./",
   productionSourceMap: false,
-  outputDir: "web",
+  outputDir: "docs",
   devServer: {
     proxy: {
       "/api": {
