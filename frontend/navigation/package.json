@@ -5,6 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "serve:local": "VUE_APP_MODEL=local vue-cli-service serve",
+    "build:local": "VUE_APP_MODEL=local vue-cli-service build && hzq unp",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
