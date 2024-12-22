@@ -1,5 +1,10 @@
 <template>
-  <div class="website-card" @click="navigateToUrl(link.url)" @mouseover="showTooltip" @mouseleave="hideTooltip">
+  <div
+    class="website-card"
+    @click="navigateToUrl(link.url)"
+    @mouseover="showTooltip"
+    @mouseleave="hideTooltip"
+  >
     <div class="website-icon">
       <img :src="link.icon_url" alt="icon" />
     </div>
@@ -16,20 +21,20 @@
 
 <script>
 export default {
-  name: 'WebsiteCard',
+  name: "WebsiteCard",
   props: {
-    link: Object
+    link: Object,
   },
   data() {
     return {
       tooltipVisible: false,
       tooltipStyle: {},
-      tooltipArrowStyle: {}
+      tooltipArrowStyle: {},
     };
   },
   methods: {
     navigateToUrl(url) {
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     },
     showTooltip(event) {
       this.tooltipVisible = true;
@@ -46,32 +51,32 @@ export default {
       if (spaceBelow < tooltipHeight) {
         // 当底部空间不足时，将提示框放在卡片上方
         this.tooltipStyle = {
-          top: 'auto',
+          top: "auto",
           bottom: `${cardRect.height + 10}px`, // 卡片上方
-          transform: 'translateX(-50%)',
+          transform: "translateX(-50%)",
         };
         this.tooltipArrowStyle = {
-          top: '100%', // 将三角形放在提示框底部
-          bottom: 'auto',
-          borderWidth: '5px 5px 0 5px',
-          borderColor: 'rgba(0, 0, 0, 0.8) transparent transparent transparent',
+          top: "100%", // 将三角形放在提示框底部
+          bottom: "auto",
+          borderWidth: "5px 5px 0 5px",
+          borderColor: "rgba(0, 0, 0, 0.8) transparent transparent transparent",
         };
       } else {
         // 当底部空间足够时，将提示框放在卡片下方
         this.tooltipStyle = {
           top: `${cardRect.height + 10}px`, // 卡片下方
-          bottom: 'auto',
-          transform: 'translateX(-50%)',
+          bottom: "auto",
+          transform: "translateX(-50%)",
         };
         this.tooltipArrowStyle = {
-          top: 'auto',
-          bottom: '100%', // 将三角形放在提示框顶部
-          borderWidth: '0 5px 5px 5px',
-          borderColor: 'transparent transparent rgba(0, 0, 0, 0.8) transparent',
+          top: "auto",
+          bottom: "100%", // 将三角形放在提示框顶部
+          borderWidth: "0 5px 5px 5px",
+          borderColor: "transparent transparent rgba(0, 0, 0, 0.8) transparent",
         };
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

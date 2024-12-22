@@ -16,7 +16,7 @@ export const getWebsites = async () => {
     if (response.data && response.data.data) {
       return response.data; // 返回完整的响应数据
     } else {
-      throw new Error('Invalid data format from /websites/ endpoint');
+      throw new Error("Invalid data format from /websites/ endpoint");
     }
   } catch (error) {
     console.error("Failed to fetch websites:", error);
@@ -32,7 +32,7 @@ export const getCategories = async () => {
     if (Array.isArray(response.data)) {
       return response.data; // 返回分类数据数组
     } else {
-      throw new Error('Invalid data format from /categories/ endpoint');
+      throw new Error("Invalid data format from /categories/ endpoint");
     }
   } catch (error) {
     console.error("Failed to fetch categories:", error);
