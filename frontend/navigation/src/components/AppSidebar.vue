@@ -2,7 +2,11 @@
   <div class="AppSidebar" ref="sidebar">
     <ul>
       <li v-for="category in categories" :key="category.id">
-        <i :class="`fas fa-${category.icon_url}`" class="icon"></i>
+        <i
+          v-if="category.icon_url"
+          :class="`fas fa-${category.icon_url}`"
+          class="icon"
+        />
         <a :href="'#' + category.name">{{ category.name }}</a>
       </li>
     </ul>

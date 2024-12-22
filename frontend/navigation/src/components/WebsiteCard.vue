@@ -6,13 +6,18 @@
     @mouseleave="hideTooltip"
   >
     <div class="website-icon">
-      <img :src="link.icon_url" alt="icon" />
+      <img v-if="link.icon_url" :src="link.icon_url" alt="icon" />
+      <img src="@/assets/logo.png" alt="ico" />
     </div>
     <div class="website-info">
       <p class="website-name">{{ link.name }}</p>
       <p class="website-description">{{ link.description }}</p>
     </div>
-    <div v-if="tooltipVisible" class="tooltip" :style="tooltipStyle">
+    <div
+      v-if="tooltipVisible && link.description?.length > 50"
+      class="tooltip"
+      :style="tooltipStyle"
+    >
       {{ link.description }}
       <div class="tooltip-arrow" :style="tooltipArrowStyle"></div>
     </div>
