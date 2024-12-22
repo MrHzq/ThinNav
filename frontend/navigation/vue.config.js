@@ -1,16 +1,19 @@
-const { defineConfig } = require('@vue/cli-service')
+const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  transpileDependencies: true
-})
+  transpileDependencies: true,
+});
 
 module.exports = {
+  publicPath: "./",
+  productionSourceMap: false,
+  outputDir: "web",
   devServer: {
     proxy: {
-      '/api': {
-        target: 'http://127.0.0.1:8000', // 本地的接口
+      "/api": {
+        target: "http://127.0.0.1:8000", // 本地的接口
         // target: 'http://10.11.0.10:9999/api', // 线上的接口
         changeOrigin: true,
-        pathRewrite: { '^/api': '' }, // 重写路径，将 /api 移除
+        pathRewrite: { "^/api": "" }, // 重写路径，将 /api 移除
       },
     },
   },
