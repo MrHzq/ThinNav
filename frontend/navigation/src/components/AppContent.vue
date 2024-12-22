@@ -15,12 +15,8 @@
       </div>
     </div>
     <div class="footer">
-      <a
-        href="https://github.com/DemoJ/ThinNav"
-        target="_blank"
-        class="footer-link"
-      >
-        <i class="fab fa-github"></i> Created by Diyun and ChatGPT
+      <a :href="$navConfig.homeWebsite" target="_blank" class="footer-link">
+        <i class="fab fa-github"></i> Created by {{ $navConfig.user }}
       </a>
     </div>
   </div>
