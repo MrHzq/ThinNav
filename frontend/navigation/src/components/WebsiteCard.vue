@@ -6,8 +6,12 @@
     @mouseleave="hideTooltip"
   >
     <div class="website-icon">
-      <img v-if="link.icon_url" :src="link.icon_url" alt="icon" />
-      <img src="@/assets/logo.png" alt="ico" />
+      <img
+        v-if="link.icon_url || link.icon"
+        :src="link.icon_url || link.icon"
+        alt="icon"
+      />
+      <img v-else src="@/assets/logo.png" alt="ico" />
     </div>
     <div class="website-info">
       <p class="website-name">{{ link.name }}</p>
@@ -106,6 +110,7 @@ export default {
   width: 40px; /* 图标宽度 */
   height: 40px; /* 图标高度 */
   object-fit: contain; /* 保持图标的比例 */
+  border-radius: 50%;
 }
 
 .website-info {
